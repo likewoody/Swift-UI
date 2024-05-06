@@ -85,7 +85,23 @@ struct ContentView: View {
             
             
             Button("지우기", action: {
+                n1 = ""
+                n2 = ""
                 
+                tA = false
+                tS = false
+                tM = false
+                tD = false
+                
+                add = ""
+                sub = ""
+                div = ""
+                mul = ""
+                
+                storedA = 0
+                storedS = 0
+                storedM = 0
+                storedD = 0
             })
             .padding()
             .frame(width: 120, height: 40)
@@ -174,7 +190,7 @@ struct ContentView: View {
         add = tA ? String(storedA) : ""
         sub = tS ? String(storedS) : ""
         mul = tM ? String(storedM) : ""
-        div = storedD.isFinite && tD ? String(storedD) : ""
+        div = storedD.isFinite && tD ? String(storedD) : tD ? "계산 불가" : ""
     }
 } // contentView
 
