@@ -7,8 +7,24 @@
 
 import Foundation
 
-struct Todo: Identifiable{
-    var id =  UUID()
+struct Todo: Codable{
+    var id: String
     var content: String
-    var insertDate: String
+    var insertdate: String
+    var willMoveId: String
+    var todoCompletion: String
+
+    init(id: String, content: String, insertdate: String, willMoveId: String, todoCompletion: String) {
+        self.id = id
+        self.content = content
+        self.insertdate = insertdate
+        self.willMoveId = willMoveId
+        self.todoCompletion = todoCompletion
+    }
+}
+
+extension Todo: Hashable{
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
