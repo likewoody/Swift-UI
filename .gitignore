@@ -2,7 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,flutter,swift,dart,xcode
 
 **/GoogleService-Info.plist
-/Users/jo/Swift-UI/2024.05.19 일요일/FirebaseImageAddress/FirebaseImageAddress/GoogleService-Info.plist
+**/Users/jo/Swift-UI/2024.05.19 일요일/FirebaseImageAddress/FirebaseImageAddress/GoogleService-Info.plist
+
 
 ### Dart ###
 # See https://www.dartlang.org/guides/libraries/private-files
