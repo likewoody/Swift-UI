@@ -34,7 +34,10 @@ struct ContentView: View {
                     for index in indexSet{
                         let item = studentList[index]
                         let studentDB = StudentDB()
-                        _ = studentDB.deleteDB(id: Int(item.id)) // 받아서 사용은 안하겠다.
+                        Task{
+                            _ = await studentDB.deleteDB(id: Int(item.id)) // 받아서 사용은 안하겠다.
+                        }
+                        
                     }
                 })
             })

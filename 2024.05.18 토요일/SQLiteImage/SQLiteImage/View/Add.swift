@@ -74,9 +74,10 @@ struct Add: View {
             
             Button("Add", action: {
                 let queryModel = StudentDB()
-                isAlert = queryModel.insertDB(name: name, dept: dept, phone: phone, image: image!)
-                // 이걸 굳이 해줘야 할까?
-//                isTextFieldFocused = false
+                Task{
+                    isAlert = await queryModel.insertDB(name: name, dept: dept, phone: phone, image: image!)
+                }
+                
             }) // Button
             .padding(10)
             .frame(width: 100)

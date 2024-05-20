@@ -60,7 +60,6 @@ struct Detail: View {
         
         // 입력 버튼을 가운데 배치하기 위해
         VStack(content: {
-            
             // 이미지가 있다면 먼저 이미지를 보여주고
             if let image{
                 Image(uiImage: image)
@@ -70,7 +69,7 @@ struct Detail: View {
             }
             Spacer()
             
-            // 사진을 선택했다면 사진을 바꿔준다.
+            // 사진을 선택한다면 사진을 바꿔준다.
             PhotosPicker("사진 선택", selection: $selectedImg, matching: .images)
                 .padding()
                 .onChange(of: selectedImg, {
@@ -97,9 +96,10 @@ struct Detail: View {
             
             Button("Delete", action: {
                 let queryModel = StudentDB()
-                isDelete = queryModel.deleteDB(id: Int(student.id))
-                // 이걸 굳이 해줘야 할까?
-//                isTextFieldFocused = false
+                Task{
+                    isDelete = await queryModel.deleteDB(id: Int(student.id))
+                }
+                
             })
             .padding(10)
             .frame(width: 100)
