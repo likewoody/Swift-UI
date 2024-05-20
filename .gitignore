@@ -250,4 +250,4 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,flutter,swift,dart,xcode
 
-*.GoogleService-Info.plist
+**/GoogleService-Info.plist
